@@ -1,0 +1,12 @@
+﻿@model List<ChurchLocator.Models.Denomination>
+
+<h1>@ViewBag.Title</h1>
+
+<p><a asp-controller="Denomination" asp-action="Add">Add Denomination</a></p>
+
+<ul>
+    @foreach (var denomination in Model)
+    {
+        <li>@denomination.Name</li>
+    }
+</ul>

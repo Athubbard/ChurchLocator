@@ -1,0 +1,20 @@
+﻿@model List<ChurchLocator.Models.Church>
+
+<h1>@ViewBag.Title</h1>
+
+
+<h1>My Churches</h1>
+
+
+<p><a asp-controller="Church" asp-action="Add">Add Church</a></p>
+
+
+<ul>
+    @foreach (var church in Model)
+    {
+        <li>@church.Name <a href="/church/remove">remove church</a></li>
+        
+    }
+</ul>
+
+

@@ -1,0 +1,21 @@
+﻿@model ChurchLocator.ViewModels.AddChurchViewModel
+
+<h1>Add Church</h1>
+<form asp-controller="Church" asp-action="Add" method="post">
+
+    <div class="form-group">
+        <label asp-for="Name"></label>
+        <input class="form-control control" asp-for="Name" />
+        <span asp-validation-for="Name"></span>
+    </div>
+    <div class="form-group"></div>
+    <label asp-for="DenominationID"></label>
+    <select asp-for="DenominationID" asp-items="Model.Denominations"></select>
+
+    
+    <input type="submit" value="Add Church" />
+</form>
+
+
+  
+    
