@@ -3,15 +3,16 @@
 
 <a asp-controller="Church" asp-action="Remove">Remove Church</a>
 <form method="post">
-    <h2>Confirm deletion</h2>
+    <h2>Confirm Deletion</h2>
 
     @foreach (var church in ViewBag.churches)
     {
         <input type="radio" name="churchIds" id="@church.ID" value="@church.ID" />
-        <input type="submit" id="@church.ID" value="@church.Name" />
-        <br />
+        <label for="@church.ID">@church.Name</label>
+        <input type="submit" value="Remove" />
 
-            
+        <br />
+             
     }
 
 
