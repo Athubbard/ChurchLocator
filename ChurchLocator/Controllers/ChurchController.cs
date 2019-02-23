@@ -1,5 +1,4 @@
-﻿
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using ChurchLocator.Models;
 using System.Collections.Generic;
 using ChurchLocator.ViewModels;

@@ -10,7 +10,7 @@ namespace ChurchLocator.Models
         public int ID { get; set; }
         public string Name { get; set; }
         public Denomination Denomination { get; set; }
-        public int ChurchID { get; set; }
+        
 
 
         
