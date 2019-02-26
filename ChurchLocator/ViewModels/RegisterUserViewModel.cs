@@ -10,26 +10,45 @@ namespace ChurchLocator.ViewModels
 
     public class RegisterUserViewModel
     {
-       
-       
+        /*
+        public string UserName { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public string Password { get; set; }
+        public string Email { get; set; }
+        */
+
+        [Required]
+        public string UserName { get; set; }
+
+        [Required]
+        public string FirstName { get; set; }
+
+        [Required]
+        public string LastName { get; set; }
+
+        [Required]
+        public string Password { get; set; }
+
+        [Required]
+        public string Email { get; set; }
+
+
+
+        //[Required]
+        //[EmailAddress]
+        //[Display(Name = "Email")]
+        //public object Email { get; private set; }
+
+
+        //[Required]
+        //[Display(Name = "Password")]
+        //public string Password { get; private set; }
+
+        //[Display(Name = "Confirm password")]
+        //[Compare("Password", ErrorMessage = "Passwords do not match.")]
+        //public string ConfirmPassword { get; private set; }
         
-        private const int M = 100;
-        //internal readonly object Name;
-
-        [Required]
-        [EmailAddress]
-        [Display(Name = "Email")]
-        public object Email { get; private set; }
-
-
-        [Required]
-        [StringLength(M, ErrorMessage = "Must be at least {2} characters long.", MinimumLength = 2)]
-        [Display(Name = "Password")]
-        public string Password { get; private set; }
-
-        [Display(Name = "Confirm password")]
-        [Compare("Password", ErrorMessage = "Passwords do not match.")]
-        public string ConfirmPassword { get; private set; }
     }
 
        

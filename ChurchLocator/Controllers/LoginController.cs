@@ -45,10 +45,11 @@ namespace ChurchLocator.Controllers
             {
                 User newuser = new User()
                 {
-
+                UserName = registerUserViewModel.UserName,
+                FirstName = registerUserViewModel.FirstName,
+                LastName = registerUserViewModel.LastName,
                 Email = registerUserViewModel.Email.ToString(),
-                Password = registerUserViewModel.Password,
-                ConfirmPassword = registerUserViewModel.ConfirmPassword
+                Password = registerUserViewModel.Password
                 };
 
                 context.User.Add(newuser);
