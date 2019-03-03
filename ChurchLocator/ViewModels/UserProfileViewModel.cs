@@ -9,7 +9,7 @@ namespace ChurchLocator.ViewModels
     public class UserProfileViewModel
     {
         [Required]
-        [Display(Name= "UserName")]
+        [Display(Name= "Username")]
         public string Name { get; set; }
 
 

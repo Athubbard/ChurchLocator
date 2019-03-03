@@ -13,7 +13,7 @@ namespace ChurchLocator.Data
         public DbSet<Church> Churches { get; set; }
         public DbSet<Denomination> Denominations { get; set; }
         public DbSet<Preference> Preferences { get; set; }
-        public DbSet<User> User { get; set; }
+        public DbSet<User> Users { get; set; }
        
 
         public ChurchDbContext(DbContextOptions<ChurchDbContext> options) : base(options)
