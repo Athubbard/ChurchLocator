@@ -3,7 +3,7 @@ using ChurchLocator.Models;
 using ChurchLocator.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-
+using System.Linq;
 
 namespace ChurchLocator.Controllers
 {
@@ -54,7 +54,9 @@ namespace ChurchLocator.Controllers
 
                 context.Users.Add(newuser);
                 context.SaveChanges();
-                return Redirect("/Login");
+
+
+                return Redirect("/Index");
 
             }
             return View(registerUserViewModel);
@@ -62,24 +64,55 @@ namespace ChurchLocator.Controllers
 
         }
 
-        public IActionResult Profile()
+        [HttpGet]
+        public IActionResult Login()
         {
-            return View(new User());
+            UserLoginViewModel userLoginViewModel = new UserLoginViewModel();
+           
+            return View();
+
+        }
+
+
+
+        [HttpPost]
+        public IActionResult Login(UserLoginViewModel userLoginViewModel)
+        {
+            User existingUser = context.Users.Where(user => user.UserName == userLoginViewModel.Username).SingleOrDefault();
+
+            if (existingUser != null)
+            {
+                if (existingUser.Password == userLoginViewModel.Password)
+                {
+                   return Redirect("/Profile");
+                }
+
+                 
+            
+            }
+
+            return View(userLoginViewModel);
+        }
+
+
+
+        [HttpGet]
+        public IActionResult Profile(int id)
+        {
+            User userlogin = context.Users.Include(user => user.UserName).Where(cm => cm.ID == id).SingleOrDefault();
+
+            return View(userlogin);
         }
 
         [HttpPost]
         public IActionResult Profile(UserProfileViewModel userProfileViewModel)
-
-       
         {
-            if (ModelState.IsValid)
-            {
-                User newuser = new User();
-            }
+
+
 
             return View(userProfileViewModel);
         }
-            
+
 
 
     }

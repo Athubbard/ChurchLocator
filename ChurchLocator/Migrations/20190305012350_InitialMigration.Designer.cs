@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ChurchLocator.Migrations
 {
     [DbContext(typeof(ChurchDbContext))]
-    [Migration("20190226000743_User")]
-    partial class User
+    [Migration("20190305012350_InitialMigration")]
+    partial class InitialMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -92,7 +92,7 @@ namespace ChurchLocator.Migrations
 
                     b.HasKey("ID");
 
-                    b.ToTable("User");
+                    b.ToTable("Users");
                 });
 
             modelBuilder.Entity("ChurchLocator.Models.Church", b =>
