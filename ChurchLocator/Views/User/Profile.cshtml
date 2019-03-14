@@ -1,28 +1,27 @@
-﻿@model IEnumerable<ChurchLocator.ViewModels.CompleteItemsListView>
+﻿@model ChurchLocator.ViewModels.UserProfileViewModel
 
 @{
-    ViewData["Title"] = "ProfileA";
+    ViewData["Title"] = "Profile";
 }
 
-<h2>ProfileA</h2>
+<h2>Profile</h2>
 
-<p>
-    <a asp-action="Profile">View Profile</a>
-</p>
+
 <table class="table">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.User)
-            </th>
+                @Html.DisplayNameFor(model => model.Name)
+             </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
+        @Model.Name
+@*@ @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.User)
+                @Html.DisplayFor(modelItem => item.Users)
             </td>
             <td>
                 @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
@@ -30,6 +29,6 @@
                 @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
             </td>
         </tr>
-}
+}*@
     </tbody>
 </table>

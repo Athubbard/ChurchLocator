@@ -30,13 +30,13 @@ namespace ChurchLocator.Controllers
 
         public IActionResult Add()
         {
-            User UserModel = new User();
+            RegisterUserViewModel registerUserViewModel= new RegisterUserViewModel();
             //use register viewmodel here and within view
 
 
 
 
-            return View(UserModel);
+            return View(registerUserViewModel);
         }
         [HttpPost]
         public IActionResult Add(RegisterUserViewModel registerUserViewModel)
@@ -56,7 +56,7 @@ namespace ChurchLocator.Controllers
                 context.SaveChanges();
 
 
-                return Redirect("/Index");
+                return View("Profile/" + newuser.ID);
 
             }
             return View(registerUserViewModel);
@@ -84,7 +84,7 @@ namespace ChurchLocator.Controllers
             {
                 if (existingUser.Password == userLoginViewModel.Password)
                 {
-                   return Redirect("/Profile");
+                   return Redirect("/User/Profile/" + existingUser.ID);
                 }
 
                  
@@ -99,18 +99,21 @@ namespace ChurchLocator.Controllers
         [HttpGet]
         public IActionResult Profile(int id)
         {
-            User userlogin = context.Users.Include(user => user.UserName).Where(cm => cm.ID == id).SingleOrDefault();
+            UserProfileViewModel userProfileViewModel = new UserProfileViewModel();
+            User user = context.Users.Where(cm => cm.ID == id).SingleOrDefault();
+            userProfileViewModel.Name = user.UserName;
+          
 
-            return View(userlogin);
+            return View(userProfileViewModel);
         }
 
         [HttpPost]
-        public IActionResult Profile(UserProfileViewModel userProfileViewModel)
+        public IActionResult Profile(CompleteItemsListView completeItemsListView)
         {
 
 
 
-            return View(userProfileViewModel);
+            return View(completeItemsListView);
         }
 
 

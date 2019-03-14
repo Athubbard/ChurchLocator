@@ -26,6 +26,9 @@ namespace ChurchLocator.ViewModels
         public string Password { get; set; }
 
         [Required]
+        public string ConfirmPassword { get; set; }
+
+        [Required]
         public string Email { get; set; }
 
 

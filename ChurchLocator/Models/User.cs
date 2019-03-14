@@ -18,7 +18,7 @@ namespace ChurchLocator.Models
        // public int UserID { get; internal set; }
 
 
-        //public User() { }
+        public User() { }
 
 
     }

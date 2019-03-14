@@ -11,7 +11,7 @@ namespace ChurchLocator.ViewModels
     {
         public List<SelectListItem> Churches { get; set; }
         public List<SelectListItem> Denominations { get; set; }
-        public string  User  { get; set; }
+        public string  Users  { get; set; }
 
     }
 }
