@@ -56,7 +56,7 @@ namespace ChurchLocator.Controllers
                 context.SaveChanges();
 
 
-                return View("Profile/" + newuser.ID);
+                return Redirect("/User/Profile/" + newuser.ID);
 
             }
             return View(registerUserViewModel);
@@ -69,7 +69,7 @@ namespace ChurchLocator.Controllers
         {
             UserLoginViewModel userLoginViewModel = new UserLoginViewModel();
            
-            return View();
+            return View(userLoginViewModel);
 
         }
 

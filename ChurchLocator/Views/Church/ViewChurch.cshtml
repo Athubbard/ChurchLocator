@@ -1,0 +1,15 @@
+﻿@*
+
+@model ChurchLocator.ViewModels.ViewChurchViewModel
+
+
+<h1>View Church Item</h1>
+
+@foreach (var churchItem in Model.Items)
+{
+    <ul>@Model.UserID.Name</ul>
+}
+
+<p><a asp-controller="Church" asp-action="AddItem" asp-route-id="@Model.Church.ID"></a></p>
+
+*@

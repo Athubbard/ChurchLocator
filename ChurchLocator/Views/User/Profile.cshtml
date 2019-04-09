@@ -18,10 +18,10 @@
     </thead>
     <tbody>
         @Model.Name
-@*@ @foreach (var item in Model) {
+@foreach (var item in Model.MyChurches) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.Users)
+                 @Html.DisplayFor(modelItem => item)
             </td>
             <td>
                 @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
@@ -29,6 +29,6 @@
                 @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
             </td>
         </tr>
-}*@
+}
     </tbody>
 </table>
